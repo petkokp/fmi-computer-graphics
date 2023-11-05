@@ -1,0 +1,37 @@
+MaxX=20;
+MaxY=20;
+M=zeros(MaxX,MaxY);
+Ax=axes;
+image(M');
+set(Ax,'YDir','normal');
+    color=10;
+    try
+        [X,Y]=ginput(2);
+        visible=input('Visible pixels: ');
+        invisible=input('Invisible pixels: ');
+    catch
+        clear;
+        clc;
+    end
+    X1=round(X(1));
+    X2=round(X(2));
+    Y1=round(Y(1));
+    Y2=round(Y(2));
+    M(X1,Y1)=color;
+    M(X2,Y2)=color;
+    image(M');
+    set(Ax,'YDir','normal');
+    tema1_round;
+    pause(1);
+    image(M');
+    set(Ax,'YDir','normal');
+    color=30;
+    X1=round(X(1));
+    X2=round(X(2));
+    Y1=round(Y(1));
+    Y2=round(Y(2));
+    tema1_bresenham;
+    pause(3);
+    image(M');
+    set(Ax,'YDir','normal'); 
+    time_tema1;
